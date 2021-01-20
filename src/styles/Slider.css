@@ -1,0 +1,55 @@
+.slider-slides {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  /* width: 100vw; */
+}
+
+.slide {
+  height: 100vh;
+  min-width: 100vw;
+  overflow: hidden;
+  position: relative;
+  transition: 2s;
+}
+
+i {
+  font-size: 4vh;
+}
+
+#goLeft {
+  background: none;
+  border: none;
+  height: 100vh;
+  left: 0;
+  outline: none;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 9%;
+}
+
+#goRight {
+  background: none;
+  border: none;
+  height: 100vh;
+  right: 0;
+  outline: none;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 9%;
+}
+
+#goLeft:hover, #goRight:hover {
+  color: #f8f8f2ff;
+  cursor: pointer;
+  transition: 0.5s;
+}
