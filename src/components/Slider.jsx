@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Img from './ImgComp';
 import '../styles/Slider.css';
 import i1 from '../styles/home-images/spacex-home01.jpg';
@@ -23,31 +23,13 @@ function Slider() {
   };
 
   const goRight = () => {
-    (x === -100 * (sliderArray.length - 1)) ? setX(0) : setX(x - 100)
+    (x === -100 * (sliderArray.length - 1)) ? setX(0) : setX(x - 100);
   };
 
-  // useEffect(() => {
-  //   const interval = () => setInterval(goRight(), 6000);
-  //   interval();
-  //   return () => clearInterval(interval)
-  // }, [x]);
-
-  // function estimate_pi(n) {
-  //   let numInCirc = 0;
-  //   let numInSquare = 0;
-  //   for (const _ of Array(n).keys()) {
-  //     const x = (Math.random() * (0 - 1)) + 1;
-  //     const y = (Math.random() * (0 - 1)) + 1;
-  //     const distance = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
-  //     if (distance <= 1) {
-  //       numInCirc += 1;
-  //     }
-  //     numInSquare += 1;
-  //   }
-  //   return console.log(4 * numInCirc / numInSquare);
-  // };
-  
-  // estimate_pi(10000000);
+  useEffect(() => {
+    const interval = setInterval(goRight, 6000);
+    return () => clearInterval(interval);
+  }, [x]);
 
   return (
     <section className="slider-container">
